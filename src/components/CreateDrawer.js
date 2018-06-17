@@ -9,6 +9,8 @@ import CalendarIcon from '@atlaskit/icon/glyph/calendar'
 import EmojiObjectsIcon from '@atlaskit/icon/glyph/emoji/objects'
 import EmojiNatureIcon from '@atlaskit/icon/glyph/emoji/nature'
 import EmojiTravelIcon from '@atlaskit/icon/glyph/emoji/travel'
+import { Link } from 'react-router-dom'
+
 
 const createItems = [
   {
@@ -17,7 +19,7 @@ const createItems = [
       ['/#event', 'Create Event', 'Create Event', CalendarIcon],
       ['/#nature', 'Create Nature', 'Create Nature', EmojiNatureIcon],
       ['/#idea', 'Create Idea', 'Create Idea', EmojiObjectsIcon],
-      ['/#travel', 'Create Travel Plans', 'Create Travel Plans', EmojiTravelIcon]
+      ['/#commands', 'Create Travel Plans', 'Create Travel Plans', EmojiTravelIcon]
     ]
   },
   {
@@ -45,6 +47,7 @@ export default class CreateDrawer extends Component {
                   itemGroup.items.map(item => {
                     const [url, text, label, Icon] = item
                     return (
+                      <Link key={url} to={url}>
                       <AkNavigationItem
                         key={url}
                         href={url}
@@ -52,6 +55,7 @@ export default class CreateDrawer extends Component {
                         text={text.valueOf()}
                         onClick={this.props.onItemClicked}
                       />
+                      </Link>
                     )
                   })
                 }

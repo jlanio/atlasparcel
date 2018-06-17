@@ -4,6 +4,8 @@
   "description": "Start your project with Atlaskit and Parcel.",
   "scripts": {
     "start": "parcel src/index.html",
+    "start-dev": "set ELECTRON_START_URL=http://localhost:1234 && electron main.js",
+    "electron": "electron main.js",
     "build": "parcel build src/index.html --public-url ./",
     "lint": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix"
@@ -30,6 +32,8 @@
     "@atlaskit/page": "latest",
     "@atlaskit/theme": "latest",
     "babel-runtime": "^6.26.0",
+    "electron": "^2.0.2",
+    "electron-reload": "^1.2.2",
     "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
